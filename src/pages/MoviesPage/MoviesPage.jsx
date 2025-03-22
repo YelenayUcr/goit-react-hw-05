@@ -9,12 +9,10 @@ function MoviesPage() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  // URL'deki query parametresini yönetmek için
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') || ''; 
 
   useEffect(() => {
-    // Query boşsa (kullanıcı henüz arama yapmamışsa) isteği atmayalım
     if (!query) return;
 
     async function fetchSearchedMovies() {
@@ -35,7 +33,6 @@ function MoviesPage() {
     e.preventDefault();
     const value = e.target.elements.search.value.trim();
     if (value === '') return;
-    // URL'de ?query=... olarak ayarla
     setSearchParams({ query: value });
   };
 

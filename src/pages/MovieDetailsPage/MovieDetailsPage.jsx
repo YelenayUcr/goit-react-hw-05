@@ -6,9 +6,6 @@ import css from './MovieDetailsPage.module.css';
 function MovieDetailsPage() {
   const { movieId } = useParams();
   const location = useLocation();
-  
-  // Geri dönüş rotası:
-  // location.state?.from varsa onu kullan, yoksa '/movies'
   const backLinkHref = location.state?.from ?? '/movies';
 
   const [movie, setMovie] = useState(null);
@@ -78,7 +75,6 @@ function MovieDetailsPage() {
         </ul>
       </div>
 
-      {/* Nested routes burada render olacak */}
       <Outlet />
     </div>
   );

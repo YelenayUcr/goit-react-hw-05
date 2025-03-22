@@ -10,7 +10,7 @@ function MovieList({ movies }) {
         <li key={movie.id} className={css.item}>
           <Link
             to={`/movies/${movie.id}`}
-            state={{ from: location }}  // geri dönmek için
+            state={{ from: location }}  
           >
             {movie.title || movie.name}
           </Link>
